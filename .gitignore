@@ -1,0 +1,11 @@
+# Dependencias de Node y Bower
+node_modules/
+bower_components/
+
+# Configuraciones privadas de Netbeans
+nbproject/private/
+nbproject/project.xml.bak
+
+# Archivos ocultos del sistema operativo
+.DS_Store
+Thumbs.db
