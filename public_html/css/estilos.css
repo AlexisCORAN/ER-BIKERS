@@ -11,10 +11,14 @@ html {
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #14161a;
     color: #e7e9ec;
     line-height: 1.6;
+}
+
+h1, h2, h3, h4, .logo, .titulo-seccion {
+    font-family: 'Oswald', sans-serif;
 }
 
 img {
