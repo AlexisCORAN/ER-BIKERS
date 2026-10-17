@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contacto y Soporte | ER Bikers</title>
+
+        <link href="css/estilos.css" rel="stylesheet" type="text/css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="imagenes/favicon_io/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="imagenes/favicon_io/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="imagenes/favicon_io/favicon-16x16.png">
+        <link rel="manifest" href="imagenes/site.webmanifest">
+    </head>
+    <body>
+        <header class="encabezado-sitio">
+            <div class="contenedor contenedor-navegacion">
+                <a href="index.html" class="logo">ER BIKERS</a>
+                <nav class="menu-navegacion">
+                    <a href="index.html">Inicio</a>
+                    <a href="nosotros.html">Nosotros</a>
+                    <a href="productos.html">Catálogo</a>
+                    <a href="contacto.html">Contacto</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section class="seccion-inicio">
+                <div class="contenedor">
+                    <span class="etiqueta-inicio">Atención al Cliente</span>
+                    <h1>Centro de Soporte</h1>
+                    <p>Estamos aquí para ayudarte. Resuelve tus dudas, déjanos tus sugerencias o presenta un reclamo formal.</p>
+                </div>
+            </section>
+
+            <section class="seccion-con-espaciado">
+                <div class="contenedor">
+                    <div class="rejilla-contacto-info">
+                        <div class="tarjeta-info">
+                            <h3>WhatsApp</h3>
+                            <p>Ventas y atención rápida.</p>
+                            <p><strong>+51 987 654 321</strong></p>
+                        </div>
+                        <div class="tarjeta-info">
+                            <h3>Correo Electrónico</h3>
+                            <p>Soporte y consultas.</p>
+                            <p><strong>soporte@erbikers.pe</strong></p>
+                        </div>
+                        <div class="tarjeta-info">
+                            <h3>Horario</h3>
+                            <p>Atención online y física.</p>
+                            <p><strong>Lun. a Sáb. 9:00 am - 7:00 pm</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="sugerencias" class="seccion-con-espaciado fondo-alternativo">
+                <div class="contenedor">
+                    <h2 class="titulo-seccion text-center">Consultas y Sugerencias</h2>
+                    <p class="subtitulo-seccion text-center">¿Dudas sobre stock o envíos? ¿Quieres dejarnos una opinión? Escríbenos.</p>
+
+                    <form class="tarjeta-formulario animar-formulario" action="#" method="post">
+                        <div class="fila-formulario">
+                            <div class="grupo-formulario">
+                                <label for="sugerencia-nombre">Nombre completo</label>
+                                <input type="text" id="sugerencia-nombre" name="nombre" placeholder="Ej. Juan Pérez" required>
+                            </div>
+                            <div class="grupo-formulario">
+                                <label for="sugerencia-correo">Correo electrónico</label>
+                                <input type="email" id="sugerencia-correo" name="email" placeholder="correo@ejemplo.com" required>
+                            </div>
+                        </div>
+                        <div class="fila-formulario">
+                            <div class="grupo-formulario completo">
+                                <label for="sugerencia-telefono">Teléfono</label>
+                                <input type="tel" id="sugerencia-telefono" name="telefono" placeholder="+51 9XX XXX XXX">
+                            </div>
+                        </div>
+                        <div class="fila-formulario">
+                            <div class="grupo-formulario completo">
+                                <label for="sugerencia-mensaje">Mensaje o Sugerencia</label>
+                                <textarea id="sugerencia-mensaje" name="mensaje" placeholder="Escribe aquí tu consulta u opinión..." required></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="boton">Enviar mensaje</button>
+                    </form>
+                </div>
+            </section>
+
+            <section id="reclamaciones" class="seccion-con-espaciado">
+                <div class="contenedor">
+                    <h2 class="titulo-seccion text-center">Libro de Reclamaciones</h2>
+                    <p class="subtitulo-seccion text-center">Conforme a lo establecido en el Código de Protección y Defensa del Consumidor.</p>
+
+                    <form class="tarjeta-formulario animar-formulario" action="#" method="post">
+                        <fieldset>
+                            <legend>1. Identificación del consumidor</legend>
+                            <div class="fila-formulario">
+                                <div class="grupo-formulario">
+                                    <label for="reclamacion-nombre">Nombre completo</label>
+                                    <input type="text" id="reclamacion-nombre" name="reclamacion_nombre" required>
+                                </div>
+                                <div class="grupo-formulario">
+                                    <label for="reclamacion-documento">DNI / CE</label>
+                                    <input type="text" id="reclamacion-documento" name="reclamacion_documento" required>
+                                </div>
+                            </div>
+                            <div class="fila-formulario">
+                                <div class="grupo-formulario completo">
+                                    <label for="reclamacion-domicilio">Domicilio</label>
+                                    <input type="text" id="reclamacion-domicilio" name="reclamacion_domicilio" placeholder="Calle, número, distrito, ciudad" required>
+                                </div>
+                            </div>
+                            <div class="fila-formulario">
+                                <div class="grupo-formulario">
+                                    <label for="reclamacion-telefono">Teléfono</label>
+                                    <input type="tel" id="reclamacion-telefono" name="reclamacion_telefono" required>
+                                </div>
+                                <div class="grupo-formulario">
+                                    <label for="reclamacion-correo">Correo electrónico</label>
+                                    <input type="email" id="reclamacion-correo" name="reclamacion_correo" required>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>2. Identificación del bien contratado</legend>
+                            <div class="fila-formulario">
+                                <div class="grupo-formulario">
+                                    <label for="reclamacion-tipo-bien">Tipo de bien</label>
+                                    <select id="reclamacion-tipo-bien" name="reclamacion_tipo_bien" required>
+                                        <option value="">Seleccione una opción</option>
+                                        <option value="producto">Producto</option>
+                                        <option value="servicio">Servicio</option>
+                                    </select>
+                                </div>
+                                <div class="grupo-formulario">
+                                    <label for="reclamacion-monto">Monto reclamado (S/)</label>
+                                    <input type="number" id="reclamacion-monto" name="reclamacion_monto" min="0" step="0.01" required>
+                                </div>
+                            </div>
+                            <div class="fila-formulario">
+                                <div class="grupo-formulario completo">
+                                    <label for="reclamacion-descripcion">Descripción del bien</label>
+                                    <textarea id="reclamacion-descripcion" name="reclamacion_descripcion" placeholder="Detalle el producto o servicio adquirido" required></textarea>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>3. Detalle de la reclamación</legend>
+                            <div class="fila-formulario">
+                                <div class="grupo-formulario completo">
+                                    <label for="reclamacion-tipo">Tipo de reclamación</label>
+                                    <select id="reclamacion-tipo" name="reclamacion_tipo" required>
+                                        <option value="">Seleccionar tipo de reclamación</option>
+                                        <option value="reclamo">Reclamo</option>
+                                        <option value="queja">Queja</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="fila-formulario">
+                                <div class="grupo-formulario completo">
+                                    <label for="reclamacion-detalle">Detalle del problema</label>
+                                    <textarea id="reclamacion-detalle" name="reclamacion_detalle" placeholder="Describa lo ocurrido con el mayor detalle posible" required></textarea>
+                                </div>
+                            </div>
+                            <div class="fila-formulario">
+                                <div class="grupo-formulario completo">
+                                    <label for="reclamacion-pedido">Pedido del consumidor</label>
+                                    <textarea id="reclamacion-pedido" name="reclamacion_pedido" placeholder="Indique qué solución espera" required></textarea>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <p class="nota-formulario">
+                            La formulación del reclamo no impide acudir a otras vías de solución de controversias ni es requisito previo para interponer una denuncia ante el INDECOPI.
+                        </p>
+                        <button type="submit" class="boton">Enviar reclamación</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer class="pie-sitio" id="pie-contacto">
+            <div class="contenedor rejilla-pie">
+                <div class="columna-pie">
+                    <h4>ER BIKERS</h4>
+                    <p>Accesorios y equipamiento para motociclistas. Seguridad, estilo y calidad en cada recorrido.</p>
+                </div>
+                <div class="columna-pie">
+                    <h4>Atención al cliente</h4>
+                    <ul>
+                        <li><a href="contacto.html#sugerencias">Consultas y Sugerencias</a></li>
+                        <li><a href="contacto.html#reclamaciones">Libro de Reclamaciones</a></li>
+                        <li><a href="preguntas.html">Preguntas Frecuentes</a></li>
+                    </ul>
+                </div>
+                <div class="columna-pie">
+                    <h4>Contáctanos</h4>
+                    <ul>
+                        <li><strong>WhatsApp:</strong> +51 987 654 321</li>
+                        <li><strong>Correo:</strong> soporte@erbikers.pe</li>
+                        <li><strong>Horario:</strong> Lun. a Sáb. 9:00 am - 7:00 pm</li>
+                    </ul>
+                </div>
+                <div class="columna-pie columna-mapa">
+                    <h4>Encuéntranos</h4>
+                    <div class="mapa-ubicacion">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3903.3120309872256!2d-77.07276982509394!3d-11.952884940159558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105d1d877f532d7%3A0x8db19fe8e1f40feb!2sUNIVERSITY%20UTP%20-%20NORTH%20LIMA!5e0!3m2!1sen!2spe!4v1789146422530!5m2!1sen!2spe" allowfullscreen="" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    </div>
+                </div>
+                <div class="columna-pie">
+                    <h4>Ubicación</h4>
+                    <p>Lima, Perú</p>
+                    <p>Atención y envíos a provincias del Perú.</p>
+                </div>
+            </div>
+            <div class="pie-inferior">
+                &copy; 2026 ER Bikers. Todos los derechos reservados. Desarrollado por Alexis C.
+            </div>
+        </footer>
+    </body>
+</html>
