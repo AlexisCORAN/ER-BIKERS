@@ -5,62 +5,73 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Inicio | ER Bikers</title>
 
-        <link href="css/estilos.css" rel="stylesheet" type="text/css">
+        <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        
         <link rel="apple-touch-icon" sizes="180x180" href="imagenes/favicon_io/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="imagenes/favicon_io/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="imagenes/favicon_io/favicon-16x16.png">
-        <link rel="manifest" href="imagenes/site.webmanifest">
+        <link rel="manifest" href="imagenes/favicon_io/site.webmanifest">
     </head>
     <body>
-        <header class="encabezado-sitio">
-            <div class="contenedor contenedor-navegacion">
-                <a href="index.html" class="logo">ER BIKERS</a>
-                <nav class="menu-navegacion">
+        <header class="cabecera">
+            <div class="contenedor barra-superior">
+                <a href="index.html" class="marca">
+                    <img src="imagenes/favicon_io/android-chrome-192x192.png" alt="Logo ER Bikers" class="logo-marca">
+                    <span>ER BIKERS</span>
+                </a>
+                <button type="button" class="boton-menu" id="btnMenu" aria-label="Abrir menú" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="navegacion" id="navPrincipal">
                     <a href="index.html">Inicio</a>
                     <a href="nosotros.html">Nosotros</a>
                     <a href="productos.html">Catálogo</a>
                     <a href="contacto.html">Contacto</a>
+                    <a href="productos.html#seccionCarrito" class="enlace-carrito">
+                        Carrito <span class="contador-carrito" id="contadorCarrito">0</span>
+                    </a>
                 </nav>
             </div>
         </header>
 
         <main>
-            <section class="seccion-inicio">
+            <section class="portada">
                 <div class="contenedor">
-                    <span class="etiqueta-inicio">Equipamiento para motociclistas</span>
+                    <span class="distintivo-portada">Equipamiento para motociclistas</span>
                     <h1>Rueda seguro. Rueda con estilo.</h1>
                     <p>ER Bikers es un emprendimiento peruano dedicado a la comercialización de accesorios y equipamiento de protección para motociclistas. Seleccionamos productos orientados a brindar seguridad, comodidad y estilo en cada recorrido.</p>
-                    <div class="botones-inicio">
-                        <a href="productos.html" class="boton">Ver catálogo</a>
-                        <a href="contacto.html" class="boton boton-contorno">Contáctanos</a>
+                    <div class="acciones-portada">
+                        <a href="productos.html" class="btn btn-primario">Ver catálogo</a>
+                        <a href="contacto.html" class="btn btn-borde">Contáctanos</a>
                     </div>
                 </div>
             </section>
 
-            <section id="multimedia" class="seccion-con-espaciado fondo-alternativo">
+            <section id="zonaMultimedia" class="bloque-seccion fondo-oscuro">
                 <div class="contenedor">
-                    <h2 class="titulo-seccion">Multimedia</h2>
-                    <p class="subtitulo-seccion">Conoce nuestros productos y explora contenido relacionado con el motociclismo.</p>
+                    <h2 class="titulo-bloque">Multimedia</h2>
+                    <p class="bajada-bloque">Conoce nuestros productos y explora contenido relacionado con el motociclismo.</p>
 
-                    <div class="rejilla-multimedia">
-                        <div class="marco-video">
+                    <div class="zona-multimedia">
+                        <div class="reproductor-video">
                             <iframe src="https://www.youtube.com/embed/c7Dpmg-PI4c?si=NIMHix0WoEvgEZZK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
 
-                        <aside class="informacion-multimedia">
-                            <div class="caja-informacion">
+                        <aside class="fichas-multimedia">
+                            <div class="ficha-destacada">
                                 <h4>Video demostrativo</h4>
                                 <p>Conoce información relacionada con el uso y equipamiento para motociclistas.</p>
                             </div>
-                            <div class="caja-informacion">
+                            <div class="ficha-destacada">
                                 <h4>¡Siente el motor!</h4>
                                 <p>Escucha la potencia de una verdadera máquina de dos ruedas.</p>
-                                <audio controls preload="metadata" class="reproductor-moto">
+                                <audio controls preload="metadata" class="reproductor-audio">
                                     <source src="multimedia/motor-bike.mp3" type="audio/mpeg">
                                     Tu navegador no soporta el elemento de audio.
                                 </audio>
@@ -68,21 +79,21 @@
                         </aside>
                     </div>
 
-                    <h3 class="titulo-galeria">Galería de productos</h3>
-                    <div class="galeria-productos">
-                        <figure>
+                    <h3 class="subtitulo-galeria">Galería de productos</h3>
+                    <div class="muestrario">
+                        <figure class="item-muestrario">
                             <img src="imagenes/imagen05.jpg" alt="Casco Storm" loading="lazy"/>
                             <figcaption>Casco Storm</figcaption>
                         </figure>
-                        <figure>
+                        <figure class="item-muestrario">
                             <img src="imagenes/imagen06.jpg" alt="Uso en ruta" loading="lazy" />
                             <figcaption>Uso en ruta</figcaption>
                         </figure>
-                        <figure>
+                        <figure class="item-muestrario">
                             <img src="imagenes/imagen07.jpg" alt="Equipo" loading="lazy" />
                             <figcaption>Equipo</figcaption>
                         </figure>
-                        <figure>
+                        <figure class="item-muestrario">
                             <img src="imagenes/imagen08.jpg" alt="Equipamiento" loading="lazy"/>
                             <figcaption>Equipamiento</figcaption>
                         </figure>
@@ -91,15 +102,31 @@
             </section>
         </main>
 
-        <footer class="pie-sitio" id="pie-contacto">
-            <div class="contenedor rejilla-pie">
+        <!-- Modelos -->
+        <script src="js/modelos/CatalogoModelo.js"></script>
+        <script src="js/modelos/CarritoModelo.js"></script>
+        <script src="js/modelos/AtencionModelo.js"></script>
 
-                <div class="columna-pie">
+        <!-- Vistas -->
+        <script src="js/vistas/NavegacionVista.js"></script>
+        <script src="js/vistas/CatalogoVista.js"></script>
+        <script src="js/vistas/CarritoVista.js"></script>
+        <script src="js/vistas/AtencionVista.js"></script>
+
+        <!-- Controladores y  Arranque -->
+        <script src="js/controladores/GeneralControlador.js"></script>
+        <script src="js/controladores/CatalogoControlador.js"></script>
+        <script src="js/controladores/AtencionControlador.js"></script>
+        <script src="js/aplicacion.js"></script>
+
+        <footer class="pie-pagina" id="pieContacto">
+            <div class="contenedor columnas-pie">
+                <div class="bloque-pie">
                     <h4>ER BIKERS</h4>
                     <p>Accesorios y equipamiento para motociclistas. Seguridad, estilo y calidad en cada recorrido.</p>
                 </div>
 
-                <div class="columna-pie">
+                <div class="bloque-pie">
                     <h4>Atención al cliente</h4>
                     <ul>
                         <li><a href="contacto.html#sugerencias">Consultas y Sugerencias</a></li>
@@ -108,7 +135,7 @@
                     </ul>
                 </div>
 
-                <div class="columna-pie">
+                <div class="bloque-pie">
                     <h4>Contáctanos</h4>
                     <ul>
                         <li><strong>WhatsApp:</strong> +51 987 654 321</li>
@@ -117,24 +144,25 @@
                     </ul>
                 </div>
 
-                <div class="columna-pie columna-mapa">
+                <div class="bloque-pie bloque-mapa">
                     <h4>Encuéntranos</h4>
-                    <div class="mapa-ubicacion">
+                    <div class="mapa-mini">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3903.3120309872256!2d-77.07276982509394!3d-11.952884940159558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105d1d877f532d7%3A0x8db19fe8e1f40feb!2sUNIVERSITY%20UTP%20-%20NORTH%20LIMA!5e0!3m2!1sen!2spe!4v1789146422530!5m2!1sen!2spe" allowfullscreen="" referrerpolicy="strict-origin-when-cross-origin"></iframe>
                     </div>
                 </div>
 
-                <div class="columna-pie">
+                <div class="bloque-pie">
                     <h4>Ubicación</h4>
                     <p>Lima, Perú</p>
                     <p>Atención y envíos a provincias del Perú.</p>
                 </div>
-
             </div>
 
-            <div class="pie-inferior">
+            <div class="pie-legal">
                 &copy; 2026 ER Bikers. Todos los derechos reservados. Desarrollado por Alexis C.
             </div>
         </footer>
+
+        <script type="module" src="js/main.js"></script>
     </body>
 </html>
