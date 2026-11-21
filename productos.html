@@ -9,234 +9,106 @@
         
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         
         <link rel="apple-touch-icon" sizes="180x180" href="imagenes/favicon_io/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="imagenes/favicon_io/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="imagenes/favicon_io/favicon-16x16.png">
-        <link rel="manifest" href="imagenes/site.webmanifest">
+        <link rel="manifest" href="imagenes/favicon_io/site.webmanifest">
     </head>
     <body>
-        <header class="encabezado-sitio">
-            <div class="contenedor contenedor-navegacion">
-                <a href="index.html" class="logo">ER BIKERS</a>
-                <nav class="menu-navegacion">
+        <header class="cabecera">
+            <div class="contenedor barra-superior">
+                <a href="index.html" class="marca">ER BIKERS</a>
+                <button type="button" class="boton-menu" id="btnMenu" aria-label="Abrir menú" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="navegacion" id="navPrincipal">
                     <a href="index.html">Inicio</a>
                     <a href="nosotros.html">Nosotros</a>
                     <a href="productos.html">Catálogo</a>
                     <a href="contacto.html">Contacto</a>
+                    <a href="productos.html#seccionCarrito" class="enlace-carrito">
+                        Carrito <span class="contador-carrito" id="contadorCarrito">0</span>
+                    </a>
                 </nav>
             </div>
         </header>
 
         <main>
-            <section id="catalogo" class="seccion-con-espaciado">
+            <section id="catalogo" class="bloque-seccion">
                 <div class="contenedor">
-                    <h2 class="titulo-seccion">Catálogo de productos</h2>
-                    <p class="subtitulo-seccion">
+                    <h2 class="titulo-bloque">Catálogo de productos</h2>
+                    <p class="bajada-bloque">
                         Accesorios y equipamiento de protección seleccionados
                         para motociclistas urbanos y de ruta.
                     </p>
-                    <div class="filtros-categorias">
-                        <span>Todos</span>
-                        <span>Cascos</span>
-                        <span>Guantes</span>
-                        <span>Indumentaria</span>
-                        <span>Accesorios</span>
+
+                    <div class="herramientas-catalogo">
+                        <div class="barra-filtros" id="barraFiltros">
+                            <span class="filtro-activo" data-categoria="Todos">Todos</span>
+                            <span data-categoria="Cascos">Cascos</span>
+                            <span data-categoria="Guantes">Guantes</span>
+                            <span data-categoria="Indumentaria">Indumentaria</span>
+                            <span data-categoria="Accesorios">Accesorios</span>
+                        </div>
+                        <div class="buscador-catalogo">
+                            <input type="search" id="buscadorProductos" placeholder="Buscar producto por nombre...">
+                        </div>
                     </div>
-                    <div class="rejilla-productos">
 
-                        <article class="tarjeta-producto">
-                            <div class="imagen-producto"><img src="imagenes/imagen01.jpg" alt="Casco Storm"></div>
-                            <div class="contenido-producto">
-                                <h3>Casco Integral Storm</h3>
-                                <p class="precio-producto">S/ 349.00</p>
-                                <button class="boton boton-carrito">Añadir al carrito</button>
+                    <div class="catalogo" id="listaProductos"></div>
+
+                    <section id="seccionCarrito" class="bloque-carrito">
+                        <div class="cabecera-carrito">
+                            <div>
+                                <h3 class="titulo-bloque">Carro de Cotización</h3>
+                                <p class="bajada-bloque">Productos de calidad al alcance de tu bolsillo.</p>
                             </div>
-                        </article>
+                            <button type="button" id="btnVaciarCarrito" class="btn btn-borde btn-chico">Vaciar carrito</button>
+                        </div>
 
-                        <article class="tarjeta-producto">
-                            <div class="imagen-producto"><img src="imagenes/imagen03.jpg" alt="Guantes RoadGrip"></div>
-                            <div class="contenido-producto">
-                                <h3>Guantes de Cuero RoadGrip</h3>
-                                <p class="precio-producto">S/ 89.00</p>
-                                <button class="boton boton-carrito">Añadir al carrito</button>
-                            </div>
-                        </article>
+                        <div class="tabla-responsiva tabla-carrito-espacio">
+                            <table class="tabla-datos" id="tablaCarrito">
+                                <caption>Resumen de productos seleccionados - ER Bikers</caption>
+                                <thead>
+                                    <tr>
+                                        <th>Producto</th>
+                                        <th>Categoría</th>
+                                        <th>Precio Unit.</th>
+                                        <th>Cantidad</th>
+                                        <th>Subtotal</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="cuerpoCarrito"></tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="4" class="celda-derecha"><strong>TOTAL ESTIMADO:</strong></td>
+                                        <td colspan="2"><strong id="totalCarrito" class="precio-producto">S/ 0.00</strong></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
 
-                        <article class="tarjeta-producto">
-                            <div class="imagen-producto"><img src="imagenes/imagen02.jpg" alt="Manubrio TrackBar"></div>
-                            <div class="contenido-producto">
-                                <h3>Manubrio TrackBar Aluminio</h3>
-                                <p class="precio-producto">S/ 210.00</p>
-                                <button class="boton boton-carrito">Añadir al carrito</button>
-                            </div>
-                        </article>
-
-                        <article class="tarjeta-producto">
-                            <div class="imagen-producto"><img src="imagenes/imagen20.jpg" alt="Casaca Vintage"></div>
-                            <div class="contenido-producto">
-                                <h3>Casaca de Cuero Vintage Pro</h3>
-                                <p class="precio-producto">S/ 450.00</p>
-                                <button class="boton boton-carrito">Añadir al carrito</button>
-                            </div>
-                        </article>
-
-                        <article class="tarjeta-producto">
-                            <div class="imagen-producto"><img src="imagenes/imagen21.jpg" alt="Intercomunicador" loading="lazy"></div>
-                            <div class="contenido-producto">
-                                <h3>Intercomunicador Bluetooth V6</h3>
-                                <p class="precio-producto">S/ 180.00</p>
-                                <button class="boton boton-carrito">Añadir al carrito</button>
-                            </div>
-                        </article>
-
-                        <article class="tarjeta-producto">
-                            <div class="imagen-producto"><img src="imagenes/imagen24.jpg" alt="Rodilleras" loading="lazy"></div>
-                            <div class="contenido-producto">
-                                <h3>Rodilleras Articuladas Titan</h3>
-                                <p class="precio-producto">S/ 120.00</p>
-                                <button class="boton boton-carrito">Añadir al carrito</button>
-                            </div>
-                        </article>
-
-                        <article class="tarjeta-producto">
-                            <div class="imagen-producto"><img src="imagenes/imagen22.jpg" alt="Casco Abierto" loading="lazy"></div>
-                            <div class="contenido-producto">
-                                <h3>Casco Abierto Urban City</h3>
-                                <p class="precio-producto">S/ 250.00</p>
-                                <button class="boton boton-carrito">Añadir al carrito</button>
-                            </div>
-                        </article>
-
-                        <article class="tarjeta-producto">
-                            <div class="imagen-producto"><img src="imagenes/imagen23.jpg" alt="Botas Touring" loading="lazy"></div>
-                            <div class="contenido-producto">
-                                <h3>Botas Touring Impermeables</h3>
-                                <p class="precio-producto">S/ 380.00</p>
-                                <button class="boton boton-carrito">Añadir al carrito</button>
-                            </div>
-                        </article>
-
-                        <article class="tarjeta-producto">
-                            <div class="imagen-producto"><img src="imagenes/imagen09.jpg" alt="Candado Alarma" loading="lazy"></div>
-                            <div class="contenido-producto">
-                                <h3>Candado con Alarma de Disco</h3>
-                                <p class="precio-producto">S/ 95.00</p>
-                                <button class="boton boton-carrito">Añadir al carrito</button>
-                            </div>
-                        </article>
-
-                        <article class="tarjeta-producto">
-                            <div class="imagen-producto"><img src="imagenes/imagen10.jpg" alt="Soporte Celular" loading="lazy"></div>
-                            <div class="contenido-producto">
-                                <h3>Soporte Celular + Cargador USB</h3>
-                                <p class="precio-producto">S/ 65.00</p>
-                                <button class="boton boton-carrito">Añadir al carrito</button>
-                            </div>
-                        </article>
-
-                        <article class="tarjeta-producto">
-                            <div class="imagen-producto"><img src="imagenes/imagen25.jpg" alt="Guantes Invierno" loading="lazy"></div>
-                            <div class="contenido-producto">
-                                <h3>Guantes Térmicos de Invierno</h3>
-                                <p class="precio-producto">S/ 110.00</p>
-                                <button class="boton boton-carrito">Añadir al carrito</button>
-                            </div>
-                        </article>
-
-                        <article class="tarjeta-producto">
-                            <div class="imagen-producto"><img src="imagenes/imagen11.jpg" alt="Funda Moto" loading="lazy"></div>
-                            <div class="contenido-producto">
-                                <h3>Funda Protectora Impermeable</h3>
-                                <p class="precio-producto">S/ 75.00</p>
-                                <button class="boton boton-carrito">Añadir al carrito</button>
-                            </div>
-                        </article>
-
-                        <article class="tarjeta-producto">
-                            <div class="imagen-producto"><img src="imagenes/imagen16.jpg" alt="Espejos" loading="lazy"></div>
-                            <div class="contenido-producto">
-                                <h3>Espejos Retrovisores Deportivos</h3>
-                                <p class="precio-producto">S/ 85.00</p>
-                                <button class="boton boton-carrito">Añadir al carrito</button>
-                            </div>
-                        </article>
-
-                        <article class="tarjeta-producto">
-                            <div class="imagen-producto"><img src="imagenes/imagen12.jpg" alt="Mochila Rígida" loading="lazy"></div>
-                            <div class="contenido-producto">
-                                <h3>Mochila Rígida Aerodinámica</h3>
-                                <p class="precio-producto">S/ 190.00</p>
-                                <button class="boton boton-carrito">Añadir al carrito</button>
-                            </div>
-                        </article>
-
-                        <article class="tarjeta-producto">
-                            <div class="imagen-producto"><img src="imagenes/imagen13.jpg" alt="Casco Modular" loading="lazy"></div>
-                            <div class="contenido-producto">
-                                <h3>Casco Modular Flip-Up PRO</h3>
-                                <p class="precio-producto">S/ 420.00</p>
-                                <button class="boton boton-carrito">Añadir al carrito</button>
-                            </div>
-                        </article>
-
-                        <article class="tarjeta-producto">
-                            <div class="imagen-producto"><img src="imagenes/imagen14.jpg" alt="Tank Pad" loading="lazy"></div>
-                            <div class="contenido-producto">
-                                <h3>Protector de Tanque (Tank Pad)</h3>
-                                <p class="precio-producto">S/ 35.00</p>
-                                <button class="boton boton-carrito">Añadir al carrito</button>
-                            </div>
-                        </article>
-
-                        <article class="tarjeta-producto">
-                            <div class="imagen-producto"><img src="imagenes/imagen17.jpg" alt="Kit Herramientas" loading="lazy"></div>
-                            <div class="contenido-producto">
-                                <h3>Kit de Herramientas Portátil</h3>
-                                <p class="precio-producto">S/ 55.00</p>
-                                <button class="boton boton-carrito">Añadir al carrito</button>
-                            </div>
-                        </article>
-
-                        <article class="tarjeta-producto">
-                            <div class="imagen-producto"><img src="imagenes/imagen18.jpg" alt="Malla Pulpo" loading="lazy"></div>
-                            <div class="contenido-producto">
-                                <h3>Malla Pulpo para Carga Pesada</h3>
-                                <p class="precio-producto">S/ 25.00</p>
-                                <button class="boton boton-carrito">Añadir al carrito</button>
-                            </div>
-                        </article>
-
-                        <article class="tarjeta-producto">
-                            <div class="imagen-producto"><img src="imagenes/imagen15.jpg" alt="Lentes Motocross" loading="lazy"></div>
-                            <div class="contenido-producto">
-                                <h3>Lentes Goggles Motocross</h3>
-                                <p class="precio-producto">S/ 90.00</p>
-                                <button class="boton boton-carrito">Añadir al carrito</button>
-                            </div>
-                        </article>
-
-                        <article class="tarjeta-producto">
-                            <div class="imagen-producto"><img src="imagenes/imagen19.jpg" alt="Chaleco Reflectivo" loading="lazy"></div>
-                            <div class="contenido-producto">
-                                <h3>Chaleco Reflectivo de Seguridad</h3>
-                                <p class="precio-producto">S/ 45.00</p>
-                                <button class="boton boton-carrito">Añadir al carrito</button>
-                            </div>
-                        </article>
-
-                    </div>
+                        <div class="acciones-carrito">
+                            <a href="contacto.html?origen=carrito#sugerencias" id="btnCotizarCarrito" class="btn btn-primario">
+                                Solicitar pedido en Contacto
+                            </a>
+                        </div>
+                    </section>
                 </div>
             </section>
 
-            <section class="seccion-con-espaciado fondo-alternativo">
+            <section class="bloque-seccion fondo-oscuro">
                 <div class="contenedor">
-                    <h2 class="titulo-seccion">Costos y Tiempos de Envío</h2>
-                    <p class="subtitulo-seccion">Conoce nuestras tarifas según tu ubicación. Hacemos envíos rápidos y seguros a todo el Perú.</p>
+                    <h2 class="titulo-bloque">Costos y Tiempos de Envío</h2>
+                    <p class="bajada-bloque">Conoce nuestras tarifas según tu ubicación. Hacemos envíos rápidos y seguros a todo el Perú.</p>
 
-                    <div class="contenedor-tablas-especificaciones">
-                        <table class="tabla-especificaciones">
+                    <div class="tabla-responsiva">
+                        <table class="tabla-datos">
                             <caption>Tarifario oficial de envíos ER Bikers - 2026</caption>
                             <thead>
                                 <tr>
@@ -282,12 +154,28 @@
                     </div>
                 </div>
             </section>
-
         </main>
+        
+         <!-- Modelos -->
+        <script src="js/modelos/CatalogoModelo.js"></script>
+        <script src="js/modelos/CarritoModelo.js"></script>
+        <script src="js/modelos/AtencionModelo.js"></script>
 
-        <footer class="pie-sitio" id="pie-contacto">
-            <div class="contenedor rejilla-pie">
-                <div class="columna-pie">
+        <!-- Vistas -->
+        <script src="js/vistas/NavegacionVista.js"></script>
+        <script src="js/vistas/CatalogoVista.js"></script>
+        <script src="js/vistas/CarritoVista.js"></script>
+        <script src="js/vistas/AtencionVista.js"></script>
+
+        <!-- Controladores y  Arranque -->
+        <script src="js/controladores/GeneralControlador.js"></script>
+        <script src="js/controladores/CatalogoControlador.js"></script>
+        <script src="js/controladores/AtencionControlador.js"></script>
+        <script src="js/aplicacion.js"></script>
+
+        <footer class="pie-pagina" id="pieContacto">
+            <div class="contenedor columnas-pie">
+                <div class="bloque-pie">
                     <h4>ER BIKERS</h4>
                     <p>
                         Accesorios y equipamiento para motociclistas.
@@ -295,7 +183,7 @@
                     </p>
                 </div>
 
-                <div class="columna-pie">
+                <div class="bloque-pie">
                     <h4>Atención al cliente</h4>
                     <ul>
                         <li><a href="contacto.html#sugerencias">Consultas y Sugerencias</a></li>
@@ -303,7 +191,7 @@
                         <li><a href="preguntas.html">Preguntas Frecuentes</a></li>
                     </ul>
                 </div>
-                <div class="columna-pie">
+                <div class="bloque-pie">
                     <h4>Contáctanos</h4>
                     <ul>
                         <li><strong>WhatsApp:</strong> +51 987 654 321</li>
@@ -311,23 +199,24 @@
                         <li><strong>Horario:</strong> Lun. a Sáb. 9:00 am - 7:00 pm</li>
                     </ul>
                 </div>
-                <div class="columna-pie columna-mapa">
+                <div class="bloque-pie bloque-mapa">
                     <h4>Encuéntranos</h4>
-                    <div class="mapa-ubicacion">
+                    <div class="mapa-mini">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3903.3120309872256!2d-77.07276982509394!3d-11.952884940159558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105d1d877f532d7%3A0x8db19fe8e1f40feb!2sUNIVERSITY%20UTP%20-%20NORTH%20LIMA!5e0!3m2!1sen!2spe!4v1789146422530!5m2!1sen!2spe" allowfullscreen="" referrerpolicy="strict-origin-when-cross-origin"></iframe>
                     </div>
                 </div>
-                <div class="columna-pie">
+                <div class="bloque-pie">
                     <h4>Ubicación</h4>
                     <p>Lima, Perú</p>
                     <p>Atención y envíos a provincias del Perú.</p>
                 </div>
             </div>
-            <div class="pie-inferior">
+            <div class="pie-legal">
                 &copy; 2026 ER Bikers.
                 Todos los derechos reservados.
                 Desarrollado por Alexis C.
             </div>
         </footer>
+
     </body>
 </html>
